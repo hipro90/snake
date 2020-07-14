@@ -104,7 +104,7 @@ const snakeFood = () => {
     } 
     console.log('id genere')
     const food = document.createElement("img")
-    food.src = '/Users/nico/Snake/souris.jpg.png'
+    food.src = '/snake/souris.jpg.png'
     const block = document.getElementById(`${mathRandom}`)
     block.appendChild(food).setAttribute("id", `img${compteurLongueurCorp}`)
     console.log(food)
