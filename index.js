@@ -65,8 +65,7 @@ const snakeHead = (e) => {
             snakeBody()
         } 
 ////////Regarder si le serpent mange la nourriture si oui fait apparaître un nouvel aliment    
-        if(id === mathRandom){  
-            console.log('manger')  
+        if(id === mathRandom){    
             let div = document.getElementById(`${mathRandom}`)
             let img = document.getElementById(`img${compteurLongueurCorp }`)
             div.removeChild(img)
@@ -83,31 +82,26 @@ const snakeHead = (e) => {
     }
     
 ////Permet au serpent d'avancer tout droit tout seul    
-    var interval = setInterval(move,200)
-    
+    var interval = setInterval(move, 200)    
 }
-    document.addEventListener('keydown',snakeHead);
+    document.addEventListener('keydown', snakeHead);
 ///////////////////////////////////////////////////////////////////////////////////
 
 //Fait apparaître la nourriture
 const snakeFood = () => { 
     mathRandom = Math.floor(Math.random() * 225)
     mathRandom === 0 && snakeFood()
-    console.log(mathRandom, id)
+
 ////Empeche la nourriture d'apparaitre dans le corp du serpent
     for(let i = historique.length - (compteurLongueurCorp + 2) ; i<historique.length; i++){
         if(mathRandom === historique[i]){
-            console.log('egal')
             snakeFood()            
         }
-        console.log('for')
     } 
-    console.log('id genere')
     const food = document.createElement("img")
-    food.src = 'snake/souris.jpg.png'
+    food.src = './souris.jpg.png'
     const block = document.getElementById(`${mathRandom}`)
     block.appendChild(food).setAttribute("id", `img${compteurLongueurCorp}`)
-    console.log(food)
 }
 snakeFood()
 
